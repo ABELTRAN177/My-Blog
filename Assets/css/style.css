@@ -72,7 +72,6 @@ textarea {
   color: white;
   margin-left: 180px;
   margin-top: 225px;
-  
   }
 
 .double-line{
@@ -81,7 +80,10 @@ textarea {
   border-width: 10px;
 }
 
-#pagebtn{
-  width: 100%;
+#pagebtn {
+  width: 300%;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  height: 10%;
 }
