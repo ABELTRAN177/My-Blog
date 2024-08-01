@@ -74,3 +74,13 @@ window.onload = function() {
         document.getElementById('blogs').innerHTML = '';
     }
 };
+document.getElementById('add-card-button').addEventListener('click', function() {
+    let container = document.getElementById('blogs');
+    let newCard = document.createElement('div');
+    newCard.className = 'card';
+    // Add more properties to the new card as needed...
+
+    // Prepend the new card to the container
+    container.insertBefore(newCard, container.firstChild);
+});
+

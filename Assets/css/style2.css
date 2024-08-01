@@ -2,6 +2,9 @@ body {
     margin: 0px;
     padding: 0px;
     font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 i{
@@ -90,15 +93,17 @@ body.dark-theme {
     color: #fff;
 }
 
-.blogs{
-    box-sizing: border-box;
-    background-color: #fff; /* light background */
-    color: #333; /* dark text */
-    border-color: #333; /* dark border */
+#blogs{
+    /* box-sizing: border-box;
+    background-color: #fff; 
+    color: #333;
+    border-color: #333; 
     width: 88%;
-    margin-top: 2%;
+    margin-top: 1%;
     outline: none;
-    padding: 0; /* set padding to 0 */
+    padding: 0; set padding to 0 */
+    flex: 1 0 auto;
+    margin: 2%;
 }
 
 .card > :first-child {
@@ -116,4 +121,32 @@ body.dark-theme .card .card-text {
 body.dark-theme .backbtn {
     color: #fff; /* light text */
     background-color: #333; /* dark background */
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+#sticky-footer {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+body.dark-theme #sticky-footer {
+    background-color: #333; /* dark background */
+    color: #fff; /* light text */
+    border-color: #fff; /* light border */
 }

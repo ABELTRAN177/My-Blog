@@ -44,7 +44,7 @@ body{
 
 input[type="text"],
 textarea {
-  width: 300%; 
+  width: 290%; 
   padding: 5px; 
   box-sizing: border-box;
 }
@@ -81,7 +81,7 @@ textarea {
 }
 
 #pagebtn {
-  width: 300%;
+  width: 290%;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
