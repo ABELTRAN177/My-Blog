@@ -1,13 +1,14 @@
+// ensures that when the page is loaded the theme toggle fires right away when clicked
 document.addEventListener('DOMContentLoaded', (event) => {
     const svgIcon = document.querySelector('#theme-toggle');
     const body = document.body;
 
-    // Load theme from localStorage
+    // Allows theme to load from localStorage
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
         body.classList.add('dark-theme');
     }
-
+    // when sun icon is clicked, the theme toggles between light and dark
     svgIcon.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
 
@@ -18,57 +19,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
             localStorage.removeItem('theme');
         }
     });
-});
 
-// <-------------------->
+    // <--------------------> 
+    document.getElementById('inputForm').addEventListener('submit', function(event) {
+        // Prevent the form from refreshing the page
+        event.preventDefault();
+    
+        // Save the form data and the user is redirected to the next page
+        // If an error occurs in the submission, log it to the console
+        try {
+            saveData();
+            document.location.href = "index2.html";
+        } catch (error) {
+            console.error('Error during form submission:', error);
+        }
+    });
 
-document.getElementById("pagebtn").onclick = function () {
-    saveData();
-    document.location.href = "index2.html"
-}
-document.getElementById("backbtn").onclick = function () {
-    document.location.href = "index.html"
-}
-
-
-// <-------------------->
-function saveData() {
-    const blogList = JSON.parse (localStorage.getItem ('blogList')) || [];
-    const username = document.getElementById('username').value;
-    const title = document.getElementById('title').value;
-    const message = document.getElementById('message').value;
-    const blog = {
-        username: username,
-        title: title,
-        message: message
-    };
-    blogList.push(blog);
- 
-    const dataString = JSON.stringify(blogList);
-    localStorage.setItem('blogList', dataString);
-}
-
-// document.getElementById("pagebtn").onclick = function() {
-//     document.location.href = "index2.html"
-// }
-// <-------------------->
-// document.getElementById('index.html').addEventListener('submit', function(event) {
-//     event.preventDefault(); // This line prevents the default form submission behavior
-
-//     // Your custom code to handle the form submission goes here
-// });
-
-function validateForm(event) {
-    event.preventDefault(); // Prevent form submission
-
-    const username = document.getElementById('username').value;
-    const title = document.getElementById('title').value;
-    const content = document.getElementById('message').value;
-
-    if (username === '' || title === '' || content === '') {
-        alert('Please complete all fields before submitting the form.');
-    } else {
-        // Form is valid, you can submit the form here
-        document.getElementById('index.html').submit();
+    // <-------------------->
+    // saves user input to localStorage to then be displayed on the next page when it is retreived
+    // If an error occurs in the submission, logs it 
+    function saveData() {
+        try {
+            const blogList = JSON.parse(localStorage.getItem('blogList')) || [];
+            const username = document.getElementById('username').value;
+            const title = document.getElementById('title').value;
+            const message = document.getElementById('message').value;
+            const blog = {
+                username: username,
+                title: title,
+                message: message
+            };
+            blogList.push(blog);
+    
+            const dataString = JSON.stringify(blogList);
+            localStorage.setItem('blogList', dataString);
+        } catch (error) {
+            console.error('Error during data saving:', error);
+        }
     }
-}
+});
