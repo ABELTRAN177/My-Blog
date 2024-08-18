@@ -1,4 +1,6 @@
 ## The Blog Spot 
+<img width="1800" alt="Screenshot 2024-08-18 at 1 48 09 PM" src="https://github.com/user-attachments/assets/8991f8cf-82ac-44c5-a924-c7ad3125e08c">
+<img width="1800" alt="Screenshot 2024-08-18 at 1 48 23 PM" src="https://github.com/user-attachments/assets/a20492fb-5516-46e5-9d54-43493991a502">
 
 
 ## Description
